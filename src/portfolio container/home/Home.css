@@ -3,7 +3,33 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   
+    height: 50vh !important;
     min-height: 670px;
     background-image: url('../../assets//home/bg.jpg');
+}
+
+@media screen and (max-width: 1110px){
+  .home-container{
+    min-height: 670px;
+  }
+
+}
+
+@media screen and (max-width: 910px){
+   
+    .home-container{
+        min-height: 870px;
+      }
+}
+@media screen and (max-width: 810px){
+    .home-container{
+        min-height: 970px;
+      }
+
+}
+@media screen and (max-width: 375px){
+    .home-container{
+        min-height: 970px;
+      } 
+
 }

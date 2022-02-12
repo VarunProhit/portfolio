@@ -4,7 +4,7 @@ import ScrollService from '../../../utility/ScrollService'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Header.css'
-import { screen } from '@testing-library/react'
+import {screen} from '@testing-library/react'
 export default function Header() {
     const [selectedScreen, setSelectedScreen] = useState(0)
     const [showHeaderOptions, setShowHeaderOptions]= useState(false)
@@ -24,9 +24,7 @@ export default function Header() {
         return(
            TOTAL_SCREENS.map((screen,i)=>(
                <div key={screen.screen_name} className={getHeaderOptionsClass(i)} onClick={()=> switchScreen(i,screen)}>
-                   <span>
-                       {screen.screen_name}
-                   </span>
+                   <span>{screen.screen_name}</span> 
                </div>
            ))
 
@@ -37,11 +35,13 @@ export default function Header() {
     {
         let classes = "header-option";
         if(index<TOTAL_SCREENS.length-1)
-        classes += "header-option-separator"
+        classes += " header-option-separator"
 
         if(selectedScreen === index) 
-            classes+="selected-header-option"
-            return
+            classes+=" selected-header-option"
+            
+            return classes;
+          
     }
 
     const switchScreen=(index,screen)=>
