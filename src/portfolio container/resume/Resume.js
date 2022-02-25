@@ -8,12 +8,12 @@ export default function Resume(props) {
     const [selectByLeftIndex,setSelectByLeftIndex]=useState(0)
     const [carousalOffSetStyle,setCarousalOffSetStyle]=useState({})
      
-    let fadeINScreenHandler = (screen)=>{
-        if(screen.fadeScreen != props.id)
+    let fadeInScreenHandler = (screen)=>{
+        if(screen.fadeInScreen !== props.id)
         return;
         Animation.animation.fadeInScreen(props.id)
     }
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeINScreenHandler);
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const ResumeHeading=(props)=>{
         return(

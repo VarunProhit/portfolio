@@ -234,31 +234,26 @@
 {
    .resume-card
    {
-       margin-left: 67px;
-       margin-right: 67px;
+       width: 40vh;
+       /* margin-left: 67px;
+       margin-right: 67px; */
     
    }
-   .resume-heading-description
-{
-    font-size: 12px;
-    text-align: justify;
-
-}
-.resume-bullet-details
-{
-    height: 360px;
-    width: fit-content;
-    /* margin-top: 12px;
-    margin-bottom: 12px; */
-    
-}
-.resume-screen-container{
-    font-size: 12px;
-}
-.resume-main-heading
-{
-    font-size: 14px;
-
-}
+   .heading-date
+   {
+       font-weight: 200;
+       font-size: 10px;
+   }
+   .resume-main-heading
+   {
+       font-size: 14px;
+   }
    
+}
+@media only screen and (max-width: 376px)
+{
+    .resume-card
+    {
+        width: 50vh;
+    }
 }

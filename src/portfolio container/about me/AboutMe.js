@@ -5,12 +5,12 @@ import Animation from '../../utility/Animation'
 import { render } from '@testing-library/react'
 import "./AboutMe.css";
 export default function AboutMe(props) {
-    let fadeINScreenHandler = (screen)=>{
-        if(screen.fadeScreen != props.id)
+    let fadeInScreenHandler = (screen)=>{
+        if(screen.fadeInScreen !== props.id)
         return;
         Animation.animation.fadeInScreen(props.id)
     }
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeINScreenHandler);
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const SCREEN_CONSTANTS={
         description: "I am second year student of Bachelor of Tecnology in Computer Science Engineering at Indian Institute of Information Technology Una. I am Frontend Developer and Competitive Programmer and having interest in Artificial Intelligence and Data Science",
@@ -39,7 +39,8 @@ export default function AboutMe(props) {
         )
     }
     return (
-        <div className='about-me-container screen-container' id={props.id || ""}>
+        <div className='about-me-container screen-container fade-in' id={props.id || ""}>
+            
             <div className='about-me-parent'>
                 <ScreenHeading title={'About Me'} subHeading={'Why Choose Me'}></ScreenHeading>
            
@@ -54,8 +55,9 @@ export default function AboutMe(props) {
                         {renderHighlights()}
                     </div>
                     <div className='about-me-options'>
-                    <button className='btn primary-btn'>
+                    <button className='btn primary-btn' onClick={() => ScrollService.scrollHandler.scrollToHireMe()}>
                             {""}
+
                             Hire Me{" "} 
                         </button>
                         <a href='Varun_Prohit-Resume.pdf' download='Varun_Prohit-Resume.pdf'>
