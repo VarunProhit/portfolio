@@ -20,7 +20,7 @@ export default function ContactMe(props) {
    const [email,setEmail]=useState("")
    const [message,setMessage]=useState("")
    const [banner,setBanner]=useState("")
-   const [bool,setBool]=useState(false)
+   const [bo,setBo]=useState(false)
 
    const handleName =(e)=>
    {
@@ -43,22 +43,24 @@ export default function ContactMe(props) {
             email,
             message
         };
-        setBool(true);
-        const res = await axios.post(`/contact`,data)
+        setBo(true);
+        const res = await axios.post(`http://localhost:5000/contact`,data)
+        console.log(res)
         if(name.length===0 || email.length===0 || message.length===0)
         {
             setBanner(res.data.msg)
             toast.error(res.data.msg)
-            setBool(false)
+            setBo(false)
         }else if(res.status===200)
         {
             setBanner(res.data.msg)
             toast.success(res.data.msg)
-            setBool(false)
+            setBo(false)
         }
        } catch(error)
        {
            console.log(error)
+           setBo(false)
        }
    }
 
@@ -112,7 +114,7 @@ export default function ContactMe(props) {
                   <div className='send-btn'>
                       <button type='submit'>send<i className='fa fa-paper-plane'></i>
                       {/* <img src={load1} alt='error'/> */}
-                      {bool?true(<b className='load'><img src={load1} alt='error'/></b>):("")}
+                      {bo&&(<b className='load'><img src={load1} alt='error'/></b>)}
                       </button>
                   </div>
                </form>
