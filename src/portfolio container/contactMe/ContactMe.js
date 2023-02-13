@@ -8,7 +8,7 @@ import ScreenHeading from '../../utility/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utility/ScrollService'
 import Animation from '../../utility/Animation'
 import './ContactMe.css'
-require("dotenv").config
+// require("dotenv").config
 export default function ContactMe(props) {
     let fadeInScreenHandler = (screen)=>{
         if(screen.fadeInScreen !== props.id)
