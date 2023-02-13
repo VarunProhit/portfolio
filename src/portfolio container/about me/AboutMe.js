@@ -13,14 +13,15 @@ export default function AboutMe(props) {
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
     const SCREEN_CONSTANTS={
-        description: "I am second year student of Bachelor of Tecnology in Computer Science Engineering at Indian Institute of Information Technology Una. I am Frontend Developer and Competitive Programmer and having interest in Artificial Intelligence and Data Science",
+        description: "I am Varun Prohit. I am currently pursuing a bachelor's degree in computer science engineering at Indian Institute of Information Technology Una. I have good knowledge of computer fundamentals including operating systems, networking, database management systems and object oriented programming. I am a coordinator of the Forum of Computer Engineers (FORCE club). I am working  as a problem settler in Meraki, the technical fest  of our college and also worked as Event Organizer in Techtatva, an inter college event organized by AAVESH club of our college in which approximately 500 engineering students took part in various events. I am also an active member of EPMOC (event management club) which develops my soft skills including leadership, teamwork and communication.",
         highlights:{
             bullets:[
-                "Frontend Web Development",
+                "Data Structure and Algorithms",
+                "Full Stack Development",
                 "React Framework",
-                "Managing Database",
-                "Data Visualization and Cleaning",
-                "3 ⭐ at Codechef",
+                "Database Management",
+                "Machine Learning",
+                "Deep Learning Specialization Certificate by Andrew NG",
                 "2627th Position at Google Kickstart(Round H)",
             ],
             heading:"Here are a Few Highlights:"

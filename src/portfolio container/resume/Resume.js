@@ -46,37 +46,38 @@ export default function Resume(props) {
         {label: "Interests",logoSrc:"interests.svg"}
     ]
     const programmingSkillDetails=[
-        {skill: "C++",ratingPercentage:85},
         {skill: "C",ratingPercentage:85},
+        {skill: "C++",ratingPercentage:85},
         {skill: "Python",ratingPercentage:65},
-        {skill: "HTML",ratingPercentage:75},
-        {skill: "CSS",ratingPercentage:75},
-        {skill: "React",ratingPercentage:55},
-        {skill: "MATLAB",ratingPercentage:45},
-        {skill: "MATLAB",ratingPercentage:45},
-        {skill: "MATLAB",ratingPercentage:45}
+        {skill: "HTML5",ratingPercentage:75},
+        {skill: "CSS3",ratingPercentage:75},
+        {skill: "ReactJS",ratingPercentage:60},
+        {skill: "Machine Learning",ratingPercentage:60},
+        {skill: "MySQL",ratingPercentage:45},
+        {skill: "Django",ratingPercentage:45},
+        {skill: "Git/Github",ratingPercentage:45}
     ];
     const projectDetails=[
-        {title:"Personal Portfolio Website", duration:{fromDate:"2020",toDate:"2021"},description:"A personal project to include my all details etc etc etc etc et cetc",
+        {title:"Song Recommendation", duration:{fromDate:"Aug 2022",toDate:"Nov 2022"},description:"A sentiment analysis based ML model to recommend songs based on the users current state of emotion.",
+        subHeading:"Technology Used: React JS, Python, TensorFlow, Google Colaboratory, Keras, API"},
+        {title:"Scholorship-o-polis", duration:{fromDate:"Mar 2022",toDate:"May 2022"},description:"A web application which helps under-graduated medical and engineering students to get to know the details about the scholarships for which they are eligible.",
         subHeading:"Technology Used: React JS, Bootstarp"},
-        {title:"Personal Portfolio Website", duration:{fromDate:"2020",toDate:"2021"},description:"A personal project to include my all details etc etc etc etc et cetc",
-        subHeading:"Technology Used: React JS, Bootstarp"},
-        {title:"Personal Portfolio Website", duration:{fromDate:"2020",toDate:"2021"},description:"A personal project to include my all details etc etc etc etc et cetc",
-        subHeading:"Technology Used: React JS, Bootstarp"}
+        {title:"Heart Stroke Prediction", duration:{fromDate:"Aug 2021",toDate:"Nov 2021"},description:"Analyzed the dataset of people regarding their health and predict their chance of heart stroke.",
+        subHeading:"Technology Used: Python,Jupyter Notebook, NumPy, Pandas, Matplotlib, Scikit-Learn, Seaborn."}
     ];
 
     const resumeDetails=[
         <div className='resume-screen-container' key="education">
-            <ResumeHeading heading={"Indian Institute of Information Technology Una"}
-             subHeading={"BACHELOR OF TECHNOLOGY"}
+            <ResumeHeading heading={"Bachelor Of Technology"}
+             subHeading={"Indian Institute of Information Technology Una"}
              fromDate={"2020"}
-             toDate={"Present"}></ResumeHeading>
-            <ResumeHeading heading={"Sun International School Jhansi"}
-             subHeading={"XII"}
+             toDate={"2024"}></ResumeHeading>
+            <ResumeHeading heading={"Senior Secondary Education"}
+             subHeading={"Sun International School Jhansi"}
              fromDate={"2018"}
              toDate={"2019"}></ResumeHeading>
-            <ResumeHeading heading={"Sun International School Jhansi"}
-             subHeading={"High School"}
+            <ResumeHeading heading={"High Education"}
+             subHeading={"Sun International School Jhansi"}
              fromDate={"2016"}
              toDate={"2017"}></ResumeHeading>
         </div>,
@@ -136,15 +137,15 @@ export default function Resume(props) {
         <div className='resume-screen-container' key="interests">
         <ResumeHeading
         heading="Competitive Programming"
-         description="cvb sadf ADSI8 zxbasu xcbic xznca cahsimx xz bkawud cxbqwidc  "
+         description="Solved more than 1000 questions on various platforms."
         />
         <ResumeHeading
-        heading="Competitive Programming"
-         description="cvb sadf ADSI8 zxbasu xcbic xznca cahsimx xz bkawud cxbqwidc  "
+        heading="Sports"
+         description="Love to play cricket, basketball and volleyball."
         />
         <ResumeHeading
-        heading="Competitive Programming"
-         description="cvb sadf ADSI8 zxbasu xcbic xznca cahsimx xz bkawud cxbqwidc  "
+        heading="Reading"
+         description="Read sci-fi and biographical novels, comics genre etc."
         >
         </ResumeHeading>
     </div>

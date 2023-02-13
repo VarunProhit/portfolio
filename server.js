@@ -75,5 +75,6 @@ router.post('/contact',(req,res)=>{
     //     }
     // })
 })
+//console.log(process.env.PSWD)
 
-module.exports=router
+// module.exports=router
