@@ -10,19 +10,19 @@ export default function Profile() {
                     <div className='colz'>
                         <div className='colz-icon'>
                             
-                        <a href='a'>
+                        <a href='https://www.facebook.com/varun.prohit.9/'>
                             <i className='fa fa-facebook-square'></i>
                         </a>
-                        <a href='a'>
-                            <i className='fa fa-google-plus-square'></i>
+                        <a href='https://www.linkedin.com/in/varun-prohit-a33939201/'>
+                            <i className='fa fa-linkedin-square'></i>
                         </a>
-                        <a href='a'>
+                        <a href='https://www.instagram.com/varunprohit/'>
                             <i className='fa fa-instagram'></i>
                         </a>
-                        <a href='a'>
-                            <i className='fa fa-youtube-square'></i>
+                        <a href='https://www.github.com/VarunProhit/'>
+                            <i className='fa fa-github'></i>
                         </a>
-                        <a href='a'>
+                        <a href='https://www.twitter.com/prohitvarun/'>
                             <i className='fa fa-twitter-square'></i>
                         </a>
                         </div>
