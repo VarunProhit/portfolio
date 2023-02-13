@@ -1,80 +1,74 @@
-require("dotenv").config
+const express = require("express");
+const nodemailer = require("nodemailer");
 const router = require('express').Router()
-const nodemailer = require('nodemailer')
+const cors = require('cors')
+
+const app = express();
+app.use(cors())
+app.use(express.json())
+require("dotenv").config();
 const { Subject } = require('rxjs')
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
+const loginroute=require("./route/contactRoute")
+app.use("/",loginroute)
+const port = process.env.port;
+app.listen(port, () => {
+ console.log(`Server is running on port: ${port}`);
+});
 
-// const oauth2Client = new OAuth2(
-//     process.env["CLIENTID"], //clientid
-//     process.env["CLIENTSECRET"], //client secret
-//     process.env["REDIRECTURL"] //redirect url
-//   );
-  // oauth2Client.setCredentials({
-  //   refresh_token: process.env["REFRESHTOKEN"],
-  // });
-  //const accessToken = oauth2Client.getAccessToken();
-  const smtpTransport = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      //type: "OAuth2",
-      user: "20163@iiitu.ac.in",
-      pass: process.env["PSWD"],
-      // clientId: process.env["CLIENTID"],
-      // clientSecret: process.env["CLIENTSECRET"],
-      // refreshToken: process.env["REFRESHTOKEN"],
-      // accessToken: accessToken,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  });
-router.post('/contact',(req,res)=>{
-    console.log(req.body)
-    let data = req.body
-    if(data.name.length===0 || data.email.length===0 || data.message.length===0)
-    {
-       return res.json({msg: "please fill all the fields"})
-    }
-    
-      
-    let mailOptions={
-       from:data.email,
-       to:'20163@iiitu.ac.in',
-       subject:`message from $(data.name)`,
-       html:`
-       <h3>Information</h3>
-       <ul>
-       <li>Name: ${data.name}</li>
-       <li>Email:${data.email}</li>
-       </ul>
-       <h3>Message</h3>
-       <p>${data.message}</p>
-       `
-    }
-    smtpTransport.sendMail(mailOptions, function (error, response) {
-        if (error) {
-          console.log(error);
-          res.status(400).json({msg:"fill all field"})
-        } else {
-          console.log("Message sent: ");
-          res.status(200).json({msg:"thanks for responding"})
-          
-        }
-      });
-    // smtpTransport.sendMail(mailOptions,async()=>
-    // {
-    //     try{
-    //       if(error) res.status(400).json({msg:"fill all field"})
-    //       else
-    //       res.status(200).json({msg:"thanks for responding"})
-    //     }catch(error)
-    //     {
-    //         if(error) return res.status(500).json({msg: "testing"})
-    //         console.log(error)
-    //     }
-    // })
-})
-//console.log(process.env.PSWD)
 
-// module.exports=router
+// let transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     type: "OAuth2",
+//     user: process.env.EMAIL,
+//     pass: process.env.WORD,
+//     clientId: process.env.OAUTH_CLIENTID,
+//     clientSecret: process.env.OAUTH_CLIENT_SECRET,
+//     refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+//   },
+//  });
+//  transporter.verify((err, success) => {
+//   err
+//     ? console.log(err)
+//     : console.log(`=== Server is ready to take messages: ${success} ===`);
+//  });
+
+// app.post("/contact", function (req, res) {
+//   console.log(req.body)
+//     let data = req.body
+//     console.log(data.name)
+//     if(data.name.length===0 || data.email.length===0 || data.message.length===0)
+//     {
+//        return res.json({msg: "please fill all the fields"})
+//     }
+
+//   let mailOptions = {
+//     // from: "test@gmail.com",
+//     // to: process.env.EMAIL,
+//     // subject: "Nodemailer API",
+//     // text: "Hi from your nodemailer API",
+//        from:data.email,
+//        to: process.env.EMAIL,
+//        subject:`message from $(data.name)`,
+//        html:`
+//        <h3>Information</h3>
+//        <ul>
+//        <li>Name: ${data.name}</li>
+//        <li>Email:${data.email}</li>
+//        </ul>
+//        <h3>Message</h3>
+//        <p>${data.message}</p>
+//        `
+//   };
+ 
+//   transporter.sendMail(mailOptions, function (err, data) {
+//     if (err) {
+//       console.log("Error " + err);
+//     } else {
+//       console.log("Email sent successfully");
+//       res.json({ status: "Email sent" });
+//     }
+//   });
+//  });

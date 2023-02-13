@@ -4,26 +4,15 @@ const nodemailer = require('nodemailer')
 const { Subject } = require('rxjs')
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
-
-// const oauth2Client = new OAuth2(
-//     process.env["CLIENTID"], //clientid
-//     process.env["CLIENTSECRET"], //client secret
-//     process.env["REDIRECTURL"] //redirect url
-//   );
-  // oauth2Client.setCredentials({
-  //   refresh_token: process.env["REFRESHTOKEN"],
-  // });
-  //const accessToken = oauth2Client.getAccessToken();
   const smtpTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      //type: "OAuth2",
-      user: "20163@iiitu.ac.in",
-      pass: process.env["PSWD"],
-      // clientId: process.env["CLIENTID"],
-      // clientSecret: process.env["CLIENTSECRET"],
-      // refreshToken: process.env["REFRESHTOKEN"],
-      // accessToken: accessToken,
+      type: "OAuth2",
+    user: process.env.EMAIL,
+    pass: process.env.WORD,
+    clientId: process.env.OAUTH_CLIENTID,
+    clientSecret: process.env.OAUTH_CLIENT_SECRET,
+    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
     },
     tls: {
       rejectUnauthorized: false,
@@ -62,18 +51,6 @@ router.post('/contact',(req,res)=>{
           
         }
       });
-    // smtpTransport.sendMail(mailOptions,async()=>
-    // {
-    //     try{
-    //       if(error) res.status(400).json({msg:"fill all field"})
-    //       else
-    //       res.status(200).json({msg:"thanks for responding"})
-    //     }catch(error)
-    //     {
-    //         if(error) return res.status(500).json({msg: "testing"})
-    //         console.log(error)
-    //     }
-    // })
 })
 
 module.exports=router

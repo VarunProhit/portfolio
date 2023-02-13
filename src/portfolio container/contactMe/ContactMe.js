@@ -8,6 +8,7 @@ import ScreenHeading from '../../utility/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utility/ScrollService'
 import Animation from '../../utility/Animation'
 import './ContactMe.css'
+require("dotenv").config
 export default function ContactMe(props) {
     let fadeInScreenHandler = (screen)=>{
         if(screen.fadeInScreen !== props.id)
@@ -47,7 +48,7 @@ export default function ContactMe(props) {
         const res = await axios.post(`http://localhost:5000/contact`,data)
         console.log(res)
         if(name.length===0 || email.length===0 || message.length===0)
-        {
+        {  
             setBanner(res.data.msg)
             toast.error(res.data.msg)
             setBo(false)
@@ -56,6 +57,7 @@ export default function ContactMe(props) {
             setBanner(res.data.msg)
             toast.success(res.data.msg)
             setBo(false)
+            console.log(name)
         }
        } catch(error)
        {
