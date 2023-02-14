@@ -12,10 +12,20 @@ const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const loginroute=require("./route/contactRoute")
 app.use("/",loginroute)
-const port = process.env.port;
+const port = process.env.port || 5000;
+
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("build"));
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "build", "index.html"));
+	}); 
+}
 app.listen(port, () => {
- console.log(`Server is running on port: ${port}`);
+	console.info(`Server started at port ${port}`);
 });
+// app.listen(port, () => {
+//  console.log(`Server is running on port: ${port}`);
+// });
 
 
 // let transporter = nodemailer.createTransport({
