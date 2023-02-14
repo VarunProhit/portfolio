@@ -45,7 +45,8 @@ export default function ContactMe(props) {
             message
         };
         setBo(true);
-        const res = await axios.post(`http://localhost:5000/contact`,data)
+        // const res = await axios.post(`http://localhost:5000/contact`,data)
+        const res = await axios.post(`/contact`,data)
         console.log(res)
         if(name.length===0 || email.length===0 || message.length===0)
         {  
