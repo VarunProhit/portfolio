@@ -90,7 +90,6 @@ const submitForm = (e) => {
     }
     else{
      emailjs.send(YOUR_SERVICE_ID, TEMPLATE_ID, data, YOUR_PUBLIC_KEY)
-    //emailjs.send('service_pjmnoct', 'template_l6ii1u4', data, 'toCWUgd-GLhBbmGo1')
       .then((result) => {
           // show the user a success message
           setBanner("Email Sent Successfully")
