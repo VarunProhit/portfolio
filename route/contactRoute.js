@@ -7,17 +7,20 @@ const OAuth2 = google.auth.OAuth2;
   const smtpTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      type: "OAuth2",
+      type: "OAuth2", 
     user: process.env.EMAIL,
     pass: process.env.WORD,
     clientId: process.env.OAUTH_CLIENTID,
     clientSecret: process.env.OAUTH_CLIENT_SECRET,
     refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+   
     },
     tls: {
       rejectUnauthorized: false,
     },
   });
+  // console.log(process.env.EMAIL)
+  // console.log("hj")
 router.post('/contact',(req,res)=>{
     console.log(req.body)
     let data = req.body
@@ -52,5 +55,6 @@ router.post('/contact',(req,res)=>{
         }
       });
 })
-
+// const k =process.env.PUBLIC_KEY
+// console.log(k)
 module.exports=router
