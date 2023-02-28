@@ -13,6 +13,9 @@ export default function Profile() {
                         <a href='https://www.facebook.com/varun.prohit.9/'>
                             <i className='fa fa-facebook-square'></i>
                         </a>
+                        <a href='https://medium.com/@varunprohit'>
+                            <i className='fa fa-medium'></i>
+                        </a>
                         <a href='https://www.linkedin.com/in/varun-prohit-a33939201/'>
                             <i className='fa fa-linkedin-square'></i>
                         </a>
